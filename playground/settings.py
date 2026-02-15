@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ #Se registran las apps para poder utilizarlas. Es necesario que APP_DIRS en TEMPLATES este en True
+    'landing',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,9 @@ ROOT_URLCONF = 'playground.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ #Se registran los templates a utilizar
+            # BASE_DIR / "landing" / "templates" #COmo ya registre mi app de landing en INSTALLED_APPS, esto ya no es necesario
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
