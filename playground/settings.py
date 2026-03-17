@@ -55,8 +55,8 @@ ROOT_URLCONF = 'playground.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ #Se registran los templates a utilizar
-            # BASE_DIR / "landing" / "templates" #COmo ya registre mi app de landing en INSTALLED_APPS, esto ya no es necesario
+        'DIRS': [ #Se registran  los templates a utilizar
+            BASE_DIR / "templates" #Solo se registra si existe la carpeta
         ],
         'APP_DIRS': True,
         'OPTIONS': {
