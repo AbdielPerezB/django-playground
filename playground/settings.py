@@ -38,7 +38,7 @@ INSTALLED_APPS = [ #Se registran las apps para poder utilizarlas. Es necesario q
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', #Esta línea la necesitamos para las rutas relavias para los archivos estáticos
 ]
 
 MIDDLEWARE = [
@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Esta línea será muy importante para desplegar a producción para indicarle a django dónde estarán nuestros archivos estáticos
