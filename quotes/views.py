@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
 # Create your views here.
 
@@ -36,5 +36,15 @@ def days_week(request, day):
     try:
         quote_text = days_of_week[day]
         return HttpResponse(quote_text)
-    except:
-        return HttpResponseNotFound("No hay frase ara ese día")
+    except KeyError:
+        # return HttpResponseNotFound("No hay frase ara ese día")
+        raise Http404()
+    
+#
+#NOtas del Http404:
+# Cuando lanzamos un Http404() Django en automático busca en la carpeta templates un archivo nombrado como 404.html
+# y lo utiliza por default. Sin embargo, eso solo funciona cuando cambiemos a un entorno productivo y no de desarrollo.
+# Para que esto funcione necesitamos cambiar playground/settings.py -> DEBUG = False. NOTA: Cuando hacemos esto, nuestro server
+# de desarrollo en automático se detiene y deja de funcionar.
+# Po mientras mientras desarrollas dejalo en false, ya cuando pases a producción lo pones en False y confías
+# en que en producción el 404.html va a aparecer en automático
