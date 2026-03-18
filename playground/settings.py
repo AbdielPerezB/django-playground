@@ -30,8 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [ #Se registran las apps para poder utilizarlas. Es necesario que APP_DIRS en TEMPLATES este en True
+INSTALLED_APPS = [ #Se registran las apps para poder utilizarlas. Es necesario que APP_DIRS en TEMPLATES este en True, si no está en true, hay que hacer la instalación manual
     'landing',
+    'quotes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
